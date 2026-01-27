@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+<div id="start" style="display: none">Start Quiz!</div>
+
+<div id="quiz" style="display: none">
+  <div id="question">Question goes here</div>
+  <div id="choices">
+    <div class="choice" id="A" onclick="checkAnswer('A')">Choice A</div>
+    <div class="choice" id="B" onclick="checkAnswer('B')">Choice B</div>
+    <div class="choice" id="C" onclick="checkAnswer('C')">Choice C</div>
+    <div class="choice" id="D" onclick="checkAnswer('D')">Choice D</div>
+  </div>
+</div>
+
+<!-- Score View -->
+<div id="scoreContainer" style="display: none">
+  <div id="scoreText"></div>
+  <img id="scoreImage" src="" alt="Score emoji" />
+</div>
+
+<!-- Edit View -->
+<div id="editView" style="display: none">
+  <div class="edit-header">
+    <h2>Quiz App</h2>
+    <div class="edit-nav">
+      <button id="editQuizBtn" class="nav-btn active">Edit quiz</button>
+      <button id="playQuizBtn" class="nav-btn">Play quiz</button>
+    </div>
+  </div>
+
+  <button id="addQuestionBtn" class="add-question-btn">Add question</button>
+
+  <div id="questionsList"></div>
+</div>
+
+<!-- Edit Dialog Modal -->
+<div id="editDialog" class="modal" style="display: none">
+  <div class="modal-content">
+    <h2 id="dialogTitle">Create new question</h2>
+
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="questionTitle" placeholder="Question title" />
+    </div>
+
+    <div class="form-group">
+      <label>Answers</label>
+      <input type="text" id="answerA" placeholder="Answer A" />
+      <input type="text" id="answerB" placeholder="Answer B" />
+      <input type="text" id="answerC" placeholder="Answer C" />
+      <input type="text" id="answerD" placeholder="Answer D" />
+    </div>
+
+    <div class="form-group">
+      <label>Correct Answer</label>
+      <select id="correctAnswer">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+    </div>
+
+    <div class="modal-buttons">
+      <button id="cancelBtn" class="cancel-btn">Cancel</button>
+      <button id="saveBtn" class="save-btn">Create</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
