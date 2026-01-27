@@ -7,6 +7,9 @@ function App() {
         <div>
             <ul>
                 <TodoItem />
+                <TodoItem />
+                <TodoItem />
+                <TodoItem />
             </ul>
         </div>
     );
